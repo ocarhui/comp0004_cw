@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Add Note</title>
+</head>
+<body>
+<div class="main">
+    <span id = 'searchTxt'>Add Note</span>
+    <form id="noteForm" method="POST" action="/addNote.html">
+        <label for="nameBox">Title</label></br>
+        <input type="text" name="namePath" id = 'nameBox' placeholder="Enter Note Name Here."/></br>
+        <label for="imgBox">Image</label></br>
+        <input type="text" name="imgPath" id = 'imgBox' placeholder="Copy Image Path Here."/></br>
+        <label for="urlBox">URL links</label></br>
+        <input type="url" name="urlPath" id = 'urlBox' placeholder="Enter URL Path Here."/></br>
+        <textarea rows="5" cols="100" name="notePath" form="noteForm">Write Note Here.</textarea></br>
+        <input type="submit" value="Search" id = "searchBtn"/>
+    </form>
+</div>
+</body>
+
+<footer>
+    <div class="navbar">
+        <a href="allNotes.html">Notes</a>
+        <a href="search.html" class = "active">Search</a>
+        <a href="add.html">Add Notes</a>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="add.css">
+</html>

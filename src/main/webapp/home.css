@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+body{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    align-content: center;
+}
+
+.name {
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 100%;
+}
+
+#title1{
+    font-size: 80px;
+    font-weight: 500;
+    font-family: 'Poppins';
+}
+
+.btns{
+    margin-left: 100px;
+    margin-top: 150px;
+    width: 100%
+}
+
+#btnNotes{
+    content: "\a";
+    height: 80px;
+    width: 350px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: "Poppins";
+    background: lightskyblue;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#btnNotes:hover{
+    background: #3696d0;
+}
+
+#btnSearch{
+    height: 80px;
+    padding: 10px 20px;
+    width: 350px;
+    border: none;
+    color: white;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: "Poppins";
+    background: lightskyblue;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#btnSearch:hover{
+    background: #3696d0;
+}
+
+#btnAdd{
+    height: 80px;
+    padding: 10px 20px;
+    width: 350px;
+    border: none;
+    color: white;
+    font-size: 40px;
+    border-radius: 10px;
+    font-family: "Poppins";
+    background: lightskyblue;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#btnAdd:hover{
+    background: #3696d0;
+}
+
