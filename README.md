@@ -7,5 +7,5 @@
 #Usage
 To launch the Note app, first run the main method of this java project.
 
-Then, open [localhost:8080/home.html](localhost:8080/home.html) in your browser.
+Then, open [localhost:8080/home.html](http://localhost:8080/home.html) in your browser.
 

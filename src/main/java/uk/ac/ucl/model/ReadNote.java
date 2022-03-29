@@ -1,3 +1,9 @@
+/**
+ * ReadNote class is for reading note from html file, so that searching through html is possible.
+ *
+ *
+ */
+
 package uk.ac.ucl.model;
 
 import java.io.File;
@@ -57,16 +63,6 @@ public class ReadNote {
             }
         }
 
-
-    }
-
-
-
-    public static void main(String[] args){
-        ReadNote note = new ReadNote("Here");
-        System.out.println(note.noteName);
-        System.out.println(note.urlPath);
-        System.out.println(note.noteDetail);
 
     }
 }

@@ -1,5 +1,3 @@
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="uk.ac.ucl.model.ReadNote" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

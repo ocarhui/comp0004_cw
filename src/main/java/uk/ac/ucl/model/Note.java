@@ -1,3 +1,9 @@
+/**
+ * Note class is for saving/transferring note into html file.
+ *
+ *
+ */
+
 package uk.ac.ucl.model;
 import org.apache.tomcat.util.http.fileupload.FileUtils;
 
@@ -71,11 +77,6 @@ public class Note {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args){
-        String urlPath = "samsung.com";
-        Note newNote = new Note("some", null, urlPath, "This is the detail.");
     }
 }
 

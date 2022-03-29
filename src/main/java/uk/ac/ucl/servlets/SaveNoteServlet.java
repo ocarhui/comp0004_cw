@@ -1,3 +1,11 @@
+/**
+ * SaveNoteServlet class is for saving the note that was selected and passed from EditNoteServlet.
+ * The url http://localhost:8080/saveEditNote.html is mapped to calling doPost on the servlet object.
+ *
+ *
+ */
+
+
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
@@ -17,20 +25,26 @@ public class SaveNoteServlet extends HttpServlet
 {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        // Use the model to do the search and put the results into the request object sent to the
-        // Java Server Page used to display the results.
+
         Model model = new Model();
-        //String noteNameIn, String imgPathIn, String urlPathIn, String noteDetailIn;
+
+
         String originalName = request.getParameter("originalName");
         String noteNameIn = request.getParameter("editNamePath");
         String imgPathIn = request.getParameter("editImgPath");
+
+        // check if the imgPath is null.
         if(imgPathIn.equals("") || imgPathIn.equals("null"))
             imgPathIn = null;
+
+        // check if the editUrlPath is null.
         String urlPathIn = request.getParameter("editUrlPath");
         if(urlPathIn.equals("") || urlPathIn.equals("null"))
             urlPathIn = null;
         String noteDetailIn = request.getParameter("editNotePath");
+
         boolean editResult = false;
+
         if(originalName.equals(noteNameIn)) {
             editResult = model.addNotes(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
         } else {
@@ -38,10 +52,9 @@ public class SaveNoteServlet extends HttpServlet
             editResult = model.addNotes(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
         }
 
-
         request.setAttribute("editResult", editResult);
 
-        // Invoke the JSP page.
+
         ServletContext context = getServletContext();
         RequestDispatcher dispatch = context.getRequestDispatcher("/finalEditResult.jsp");
         dispatch.forward(request, response);

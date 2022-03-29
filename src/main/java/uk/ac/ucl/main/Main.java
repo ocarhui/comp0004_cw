@@ -1,3 +1,9 @@
+/**
+ * The Main class that enables the server.
+ * The main page is localhost:8080/home.html
+ *
+ */
+
 package uk.ac.ucl.main;
 
 import java.io.File;

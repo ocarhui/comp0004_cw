@@ -1,3 +1,9 @@
+/**
+ * Model class is for modelling note and readNote and provide easy access from servlet and jsp.
+ *
+ *
+ */
+
 package uk.ac.ucl.model;
 
 import java.io.File;
@@ -20,10 +26,18 @@ public class Model {
 
   }
 
+  /**
+   * @return Arraylist of note names
+   */
   public ArrayList<String> getNoteNames(){
     return urls;
   }
 
+  /**
+   * Search for the target note with the same name or having the content
+   * @param searchString The search string
+   * @return Arraylist containing the match notes
+   */
   public ArrayList<String> searchNotes(String searchString){
     ArrayList<String> retValue = new ArrayList<String>();
     searchString = searchString.toLowerCase();
@@ -38,6 +52,14 @@ public class Model {
     return retValue;
   }
 
+  /**
+   * Turn note from different fields into note html format.
+   * @param noteNameIn name of Note
+   * @param imgPathIn image attachment to the Note
+   * @param urlPathIn url attachment to the Note
+   * @param noteDetailIn note details
+   * @return true for successfully added, false for error
+   */
   public boolean addNotes(String noteNameIn, String imgPathIn, String urlPathIn, String noteDetailIn){
     boolean retValue = false;
     try {
@@ -50,6 +72,11 @@ public class Model {
     return retValue;
   }
 
+  /**
+   * Delete note
+   * @param noteName name of Note
+   * @return true for successfully deleted, false for error
+   */
   public boolean deleteNote(String noteName) {
     boolean retValue = false;
     for (int i = 0; i < urls.size(); i++) {
@@ -71,12 +98,21 @@ public class Model {
     return retValue;
   }
 
+  /**
+   * read the data inside the note to Edit
+   * @param noteName name of Note
+   * @return a ReadNote which contains all the parameters of the note.
+   */
   public ReadNote editNote(String noteName){
     ReadNote note = new ReadNote(noteName);
 
     return note;
   }
 
+  /**
+   * Sort the note list in descending order.
+   * @return a sorted list
+   */
   public ArrayList<String> sortByDescendingOrder(){
     Collections.sort(urls, new Comparator<String>(){
       public int compare(String s1, String s2){
@@ -86,6 +122,10 @@ public class Model {
     return urls;
   }
 
+  /**
+   * Sort the note list in ascending order.
+   * @return a sorted list
+   */
   public ArrayList<String> sortByAscendingOrder(){
     Collections.sort(urls, new Comparator<String>(){
       public int compare(String s1, String s2){
@@ -94,29 +134,4 @@ public class Model {
     });
     return urls;
   }
-
-  public void removeElementFromURL(String nameIn){
-    for(int i = 0; i< urls.size(); i++){
-      if(urls.get(i).toLowerCase().equals(nameIn.toLowerCase())){
-        urls.remove(urls.get(i));
-      }
-    }
-  }
-
-
-
-
-
-  public static void main(String[] args){
-    Model newModel = new Model();
-
-    ArrayList<String> sortURL = newModel.sortByDescendingOrder();
-
-    for(int i = 0; i<sortURL.size(); i++){
-      System.out.println(sortURL.get(i));
-    }
-
-  }
-
-
 }
