@@ -12,6 +12,13 @@
 
 <div class = topBar>
   <span id = "title">All Notes</span>
+  <form id="sortDesc" method="POST" action="/sortD.html">
+    <input type="submit" value="Sort By Descending" id = "btnD"/>
+  </form>
+  <form id="sortAsc" method="POSt" action="/sortA.html">
+    <input type="submit" value="Sort By Ascending" id = "btnA"/>
+  </form>
+
 </div>
 
 <div class= main>
@@ -27,6 +34,19 @@
     </li>
     <%}%>
   </ul>
+</div>
+
+<div class = cmdArea>
+  <form id="cmdForm" method="POST" action="/runCommand.html">
+    <label for="cmdBox">Delete Note</label></br>
+    <input type="text" name="cmdLine" id = 'cmdBox' placeholder="Write The Note Name Here."/></br>
+    <input type="submit" value="Delete" id = "delBtn"/>
+  </form>
+  <form id="editForm" method="POST" action="/editNote.html">
+    <label for="editBox">Edit Note</label></br>
+    <input type="text" name="editLine" id = 'editBox' placeholder="Write The Note Name Here."/></br>
+    <input type="submit" value="Edit" id = "editBtn"/>
+  </form>
 </div>
 </body>
 
