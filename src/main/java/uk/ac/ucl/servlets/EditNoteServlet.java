@@ -9,6 +9,7 @@
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
+import uk.ac.ucl.model.ModelFactory;
 import uk.ac.ucl.model.ReadNote;
 
 import javax.servlet.RequestDispatcher;
@@ -24,7 +25,7 @@ import java.io.IOException;
 public class EditNoteServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Model model = new Model();
+        Model model = ModelFactory.getModel();
 
         String command = request.getParameter("editLine");
         ReadNote note = model.editNote(command);

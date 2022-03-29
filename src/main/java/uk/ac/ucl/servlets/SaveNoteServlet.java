@@ -9,6 +9,7 @@
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
+import uk.ac.ucl.model.ModelFactory;
 import uk.ac.ucl.model.ReadNote;
 
 import javax.servlet.RequestDispatcher;
@@ -26,7 +27,7 @@ public class SaveNoteServlet extends HttpServlet
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
 
-        Model model = new Model();
+        Model model = ModelFactory.getModel();
 
 
         String originalName = request.getParameter("originalName");
@@ -34,23 +35,25 @@ public class SaveNoteServlet extends HttpServlet
         String imgPathIn = request.getParameter("editImgPath");
 
         // check if the imgPath is null.
-        if(imgPathIn.equals("") || imgPathIn.equals("null"))
-            imgPathIn = null;
+        //if(imgPathIn.equals("") || imgPathIn.equals("null"))
+         //   imgPathIn = null;
 
         // check if the editUrlPath is null.
         String urlPathIn = request.getParameter("editUrlPath");
-        if(urlPathIn.equals("") || urlPathIn.equals("null"))
-            urlPathIn = null;
+        //if(urlPathIn.equals("") || urlPathIn.equals("null"))
+         //   urlPathIn = null;
         String noteDetailIn = request.getParameter("editNotePath");
 
         boolean editResult = false;
 
-        if(originalName.equals(noteNameIn)) {
+        /*if(originalName.equals(noteNameIn)) {
             editResult = model.addNotes(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
         } else {
             model.deleteNote(originalName);
             editResult = model.addNotes(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
-        }
+        }*/
+
+        editResult=model.saveEditNote(originalName,noteNameIn,imgPathIn,urlPathIn,noteDetailIn);
 
         request.setAttribute("editResult", editResult);
 

@@ -8,6 +8,7 @@
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
+import uk.ac.ucl.model.ModelFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -25,7 +26,7 @@ public class AllNotesServlet extends HttpServlet
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
-        Model model = new Model();
+        Model model = ModelFactory.getModel();
         ArrayList<String> fileNames = model.getNoteNames();
 
         request.setAttribute("fileNames", fileNames);
