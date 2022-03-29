@@ -4,31 +4,34 @@
 
 <html>
 <head>
-    <title>Patient Data App</title>
+    <title>Result</title>
 </head>
 <body>
+<div class = topBar>
+    <span id = "title">Add Note Results</span>
+    <button id = "btnBack" onclick = "window.location='add.html'">Back</button>
+</div>
 <div class="main">
-    <h1>Add Note Result</h1>
     <%
         boolean addResult = (boolean) request.getAttribute("addNoteResult");
         if (addResult == true)
         {
     %>
     <ul>
-        <p>Note Added.</p>
+        <p id="success">Note Added.</p>
         <% } else
         {%>
-        <p>Failed to add Note.</p>
+        <p id="error">Failed to add Note.</p>
         <%}%>
     </ul>
 </div>
 </body>
 <footer>
     <div class="navbar">
-        <a href="allNotes.html" class = "active">Notes</a>
+        <a href="allNotes.html">Notes</a>
         <a href="search.html">Search</a>
-        <a href="add.html">Add Notes</a>
+        <a href="add.html" class = "active">Add Notes</a>
     </div>
 </footer>
-<link rel="stylesheet" href="searchResult.css">
+<link rel="stylesheet" href="addNoteResult.css">
 </html>

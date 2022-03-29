@@ -4,16 +4,16 @@
 </head>
 <body>
 <div class="main">
-    <span id = 'searchTxt'>Add Note</span>
+    <span id = 'title'>Add Note</span>
     <form id="noteForm" method="POST" action="/addNote.html">
-        <label for="nameBox">Title</label></br>
+        <label for="nameBox" id="lblName">Title</label>
         <input type="text" name="namePath" id = 'nameBox' placeholder="Enter Note Name Here."/></br>
-        <label for="imgBox">Image</label></br>
+        <label for="imgBox" id="lblImg">Image</label>
         <input type="text" name="imgPath" id = 'imgBox' placeholder="Copy Image Path Here."/></br>
-        <label for="urlBox">URL links</label></br>
+        <label for="urlBox" id="lblURL">URL links</label>
         <input type="url" name="urlPath" id = 'urlBox' placeholder="Enter URL Path Here."/></br>
-        <textarea rows="5" cols="100" name="notePath" form="noteForm">Write Note Here.</textarea></br>
-        <input type="submit" value="Search" id = "searchBtn"/>
+        <textarea rows="5" cols="100" name="notePath" id="noteTxt" form="noteForm">Write Note Here.</textarea></br>
+        <input type="submit" value="Submit" id = "addBtn"/>
     </form>
 </div>
 </body>
@@ -21,8 +21,8 @@
 <footer>
     <div class="navbar">
         <a href="allNotes.html">Notes</a>
-        <a href="search.html" class = "active">Search</a>
-        <a href="add.html">Add Notes</a>
+        <a href="search.html">Search</a>
+        <a href="add.html" class = "active">Add Notes</a>
     </div>
 </footer>
 

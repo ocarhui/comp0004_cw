@@ -1,67 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-body{
-    display: flex;
-    justify-content: left;
-    flex-direction: column;
-    align-content: center;
+.topBar {
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 100%;
+    font-family: 'Poppins';
 }
 
-#searchTxt {
-    margin-left: 50px;
+#title{
     font-size: 60px;
     font-weight: 500;
     font-family: 'Poppins';
-    color:Black;
 }
 
-#searchBox{
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 1000px;
-    border: none;
-    outline: none;
-    color: #555;
-    font-size: 25px;
-    padding: 10px 20px;
-    border: 2px solid transparent;
+#success{
+    font-size: 40px;
+    font-weight: 500;
     font-family: 'Poppins';
-    background: #f3f3f3;
-    border-radius: 10px;
-    height: 70px;
+    color: mediumspringgreen;
 }
 
-#searchBox:focus{
-    border: 2px solid lightskyblue;
-}
-
-#searchBtn{
+#btnBack {
+    margin-left:600px;
+    width: 150px;
     height: 70px;
     padding: 10px 20px;
     border: none;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 10px;
     font-family: "Poppins";
+    text-alignt: center;
     background: lightskyblue;
-    margin-left: 100px;
-    margin: 20px;
     cursor: pointer;
 }
 
-#searchBtn:hover{
+#btnBack:hover{
     background: #3696d0;
 }
 
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
-.main{
-    font-size: 20px;
+#error{
+    font-size: 40px;
     font-weight: 500;
     font-family: 'Poppins';
-    color: lightskyblue;
+    color: darkred;
+
 }
 
 .navbar {

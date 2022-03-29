@@ -4,12 +4,14 @@ body{
     justify-content: left;
     flex-direction: column;
     align-content: center;
+    margin-bottom: 60px;
 }
 
 .topBar {
     margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 100%;
+    font-family: 'Poppins';
 }
 
 #title{
@@ -18,11 +20,172 @@ body{
     font-family: 'Poppins';
 }
 
+#sortDesc{
+    margin-left: 450px;
+}
+
+#btnD{
+    height: 50px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: "Poppins";
+    text-alignt: center;
+    background: lightskyblue;
+    cursor: pointer;
+}
+
+#btnD:hover{
+    background: #3696d0;
+}
+
+#btnA{
+    height: 50px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Poppins";
+    background: lightskyblue;
+    cursor: pointer;
+}
+
+#btnA:hover{
+    background: #3696d0;
+}
+
+
+
 .main{
+    margin-left: 50px;
     font-size: 20px;
     font-weight: 500;
     font-family: 'Poppins';
     color: lightskyblue;
+}
+
+#results{
+    width: 1200px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#results li a {
+    border-radius: 10px;
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: 10px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    font-family: "Poppins";
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#results li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.cmdArea{
+    margin-top: 20px;
+    margin-left: 50px;
+    font-family: "Poppins";
+}
+
+#lblDelete{
+    font-size: 30px;
+    color: darkred;
+}
+
+#cmdBox{
+    height: 50px;
+    width: 800px;
+    border: none;
+    outline: none;
+    color: #555;
+    font-size: 25px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    font-family: 'Poppins';
+    background: #f3f3f3;
+    border-radius: 10px;
+
+}
+
+#cmdBox:focus{
+    border: 2px solid lightskyblue;
+}
+
+#delBtn{
+    height: 50px;
+    width: 110px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Poppins";
+    background: lightskyblue;
+    cursor: pointer;
+}
+
+#delBtn:hover{
+    background: #3696d0;
+}
+
+#lblDelete{
+    font-size: 30px;
+    color: darkred;
+}
+
+#editBox{
+    margin-left: 40px;
+    height: 50px;
+    width: 800px;
+    border: none;
+    outline: none;
+    color: #555;
+    font-size: 25px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    font-family: 'Poppins';
+    background: #f3f3f3;
+    border-radius: 10px;
+
+}
+
+#editBox:focus{
+    border: 2px solid lightskyblue;
+}
+
+#lblEdit{
+    font-size: 30px;
+    color: coral;
+}
+
+#editBtn{
+    height: 50px;
+    width: 110px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Poppins";
+    background: lightskyblue;
+    cursor: pointer;
+}
+
+#editBtn:hover{
+    background: #3696d0;
 }
 
 .navbar {
@@ -32,6 +195,12 @@ body{
     border-radius: 10px;
     bottom: 0;
     width: 100%;
+}
+
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
 /* Style the links inside the navigation bar */

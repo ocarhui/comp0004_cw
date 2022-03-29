@@ -1,4 +1,3 @@
-<%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -6,23 +5,22 @@
 <head>
   <meta charset="UTF-8">
   <title>All Notes</title>
-  <link rel="stylesheet" href="allNotes.css">
 </head>
 <body>
 
 <div class = topBar>
   <span id = "title">All Notes</span>
-  <form id="sortDesc" method="POST" action="/sortD.html">
+  <form id="sortDesc" method="POST" action="/sortD.html" style="display:inline-flex;">
     <input type="submit" value="Sort By Descending" id = "btnD"/>
   </form>
-  <form id="sortAsc" method="POSt" action="/sortA.html">
+  <form id="sortAsc" method="POSt" action="/sortA.html" style="display:inline-flex;">
     <input type="submit" value="Sort By Ascending" id = "btnA"/>
   </form>
 
 </div>
 
 <div class= main>
-  <ul>
+  <ul id = 'results'>
     <%
       ArrayList<String> notes = (ArrayList<String>) request.getAttribute("fileNames");
 
@@ -38,13 +36,13 @@
 
 <div class = cmdArea>
   <form id="cmdForm" method="POST" action="/runCommand.html">
-    <label for="cmdBox">Delete Note</label></br>
-    <input type="text" name="cmdLine" id = 'cmdBox' placeholder="Write The Note Name Here."/></br>
-    <input type="submit" value="Delete" id = "delBtn"/>
+    <label for="cmdBox" id="lblDelete">Delete Note</label>
+    <input type="text" name="cmdLine" id = 'cmdBox' placeholder="Write The Note Name Here."/>
+    <input type="submit" value="Delete" id = "delBtn" style="display:inline-flex;"/>
   </form>
   <form id="editForm" method="POST" action="/editNote.html">
-    <label for="editBox">Edit Note</label></br>
-    <input type="text" name="editLine" id = 'editBox' placeholder="Write The Note Name Here."/></br>
+    <label for="editBox" id="lblEdit">Edit Note</label>
+    <input type="text" name="editLine" id = 'editBox' placeholder="Write The Note Name Here."/>
     <input type="submit" value="Edit" id = "editBtn"/>
   </form>
 </div>
@@ -57,6 +55,6 @@
     <a href="add.html">Add Notes</a>
   </div>
 </footer>
-
+<link rel="stylesheet" href="allNotes.css">
 </div>
 </html>

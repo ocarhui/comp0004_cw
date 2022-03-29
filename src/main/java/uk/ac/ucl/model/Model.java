@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Locale;
 
 public class Model {
   private ArrayList<String> urls = new ArrayList<String>();
@@ -30,7 +29,7 @@ public class Model {
     searchString = searchString.toLowerCase();
     for(int i = 0; i< urls.size(); i++){
       ReadNote readNote = new ReadNote(urls.get(i));
-      if(readNote.getNoteDetail().contains(searchString)
+      if(readNote.getNoteDetail().toLowerCase().contains(searchString)
           || urls.get(i).toLowerCase().contains(searchString)){
         retValue.add(urls.get(i));
       }
