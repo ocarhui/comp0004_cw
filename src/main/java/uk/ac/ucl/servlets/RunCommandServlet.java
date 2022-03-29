@@ -9,6 +9,7 @@
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
+import uk.ac.ucl.model.ModelFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -24,7 +25,8 @@ import java.io.IOException;
 public class RunCommandServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Model model = new Model();
+        Model model = ModelFactory.getModel();
+
 
         String command = request.getParameter("cmdLine");
         boolean result = model.deleteNote(command);

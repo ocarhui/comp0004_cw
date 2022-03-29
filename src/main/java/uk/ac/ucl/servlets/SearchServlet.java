@@ -8,6 +8,7 @@
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
+import uk.ac.ucl.model.ModelFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -24,7 +25,7 @@ public class SearchServlet extends HttpServlet
 {
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {
-    Model model = new Model();
+    Model model = ModelFactory.getModel();
     List<String> searchResult = model.searchNotes(request.getParameter("searchstring"));
     request.setAttribute("result", searchResult);
 

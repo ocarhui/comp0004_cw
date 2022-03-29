@@ -62,13 +62,66 @@ public class Model {
    */
   public boolean addNotes(String noteNameIn, String imgPathIn, String urlPathIn, String noteDetailIn){
     boolean retValue = false;
-    try {
-      Note newNote = new Note(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
-      urls.add(noteNameIn);
-      retValue = true;
-    } catch(Exception e){
-      retValue = false;
+    boolean ifHasSame = false;
+
+    for(int i=0; i<urls.size(); i++){
+      if(noteNameIn.toLowerCase().equals(urls.get(i).toLowerCase())){
+        ifHasSame = true;
+        break;
+      }
     }
+
+    if(ifHasSame==false) {
+      try {
+        Note newNote = new Note(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
+        urls.add(noteNameIn);
+        retValue = true;
+      } catch (Exception e) {
+        retValue = false;
+      }
+    }
+    return retValue;
+  }
+
+  public boolean saveEditNote(String originalNoteNameIn, String noteNameIn, String imgPathIn, String urlPathIn, String noteDetailIn){
+    boolean retValue = false;
+    boolean ifHasSame = false;
+
+    if(imgPathIn.equals("") || imgPathIn.equals("null"))
+      imgPathIn = null;
+
+    if(urlPathIn.equals("") || urlPathIn.equals("null"))
+      urlPathIn = null;
+
+    originalNoteNameIn = originalNoteNameIn.substring(0,originalNoteNameIn.length()-1);
+    if(originalNoteNameIn.toLowerCase().equals(noteNameIn.toLowerCase())){
+      try {
+        Note newNote = new Note(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
+        urls.add(noteNameIn);
+        retValue = true;
+      } catch (Exception e) {
+        retValue = false;
+      }
+    } else {
+      for(int i=0; i<urls.size(); i++){
+        if(noteNameIn.toLowerCase().equals(urls.get(i).toLowerCase())){
+          ifHasSame = true;
+          break;
+        }
+      }
+
+      if(ifHasSame==false) {
+        try {
+          deleteNote(originalNoteNameIn);
+          Note newNote = new Note(noteNameIn, imgPathIn, urlPathIn, noteDetailIn);
+          urls.add(noteNameIn);
+          retValue = true;
+        } catch (Exception e) {
+          retValue = false;
+        }
+      }
+    }
+
     return retValue;
   }
 

@@ -8,6 +8,7 @@
 package uk.ac.ucl.servlets;
 
 import uk.ac.ucl.model.Model;
+import uk.ac.ucl.model.ModelFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -23,7 +24,7 @@ public class AddNoteServlet extends HttpServlet
 {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        Model model = new Model();
+        Model model = ModelFactory.getModel();
 
         String noteNameIn = request.getParameter("namePath");
         String imgPathIn = request.getParameter("imgPath");
